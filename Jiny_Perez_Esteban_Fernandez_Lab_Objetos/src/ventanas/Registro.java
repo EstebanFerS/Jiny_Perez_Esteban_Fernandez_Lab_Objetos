@@ -134,7 +134,7 @@ public class Registro extends javax.swing.JFrame {
 
         if (txtNombre.getText().equals(" ") || txtUsuario.getText().equals(" ") || txtPassword.getText().equals(" ")) {
             JOptionPane.showMessageDialog(null, "No puede dejar campos vacio");
-        } else if (password.length() < 5) {
+        } else if (password.length() != 5) {
             JOptionPane.showMessageDialog(null, "La contraseña no puede ser menor a 5");
         } else {
             Jugador nuevo = new Jugador(txtNombre.getText(), txtUsuario.getText(), password);
