@@ -16,14 +16,24 @@ public class Jugador {
     
     public static Jugador[]jugadores = new Jugador[100];
     
+    public String nombre;
     public String username;
     public String password;
     public int puntos = 0;
     
-    public Jugador(String username, String password){
+    public Jugador(String username, String nombre ,String password){
+        this.nombre =  nombre;
         this.username = username;
         this.password = password;
         this.puntos = 0;
+    }
+    
+    public void setNombre(String nombre){
+        this.nombre =  nombre;
+    }
+    
+    public String getNombre(){
+        return nombre;
     }
     
     public void setUsername(String username){
