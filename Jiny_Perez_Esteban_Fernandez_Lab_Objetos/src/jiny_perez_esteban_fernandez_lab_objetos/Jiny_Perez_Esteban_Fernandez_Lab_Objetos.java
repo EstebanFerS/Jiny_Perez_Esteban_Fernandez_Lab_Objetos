@@ -9,12 +9,8 @@ package jiny_perez_esteban_fernandez_lab_objetos;
  * @author esteb
  */
 public class Jiny_Perez_Esteban_Fernandez_Lab_Objetos {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
     }
     
 }
