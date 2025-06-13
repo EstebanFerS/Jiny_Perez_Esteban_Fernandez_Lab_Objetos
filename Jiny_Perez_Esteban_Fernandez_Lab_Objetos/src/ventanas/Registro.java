@@ -4,15 +4,16 @@
  */
 package ventanas;
 
+import javax.swing.JOptionPane;
+import jiny_perez_esteban_fernandez_lab_objetos.Jugador;
+
 /**
  *
  * @author marye
  */
 public class Registro extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Registro
-     */
+    MenuInicio menuInicio = new MenuInicio();
     public Registro() {
         initComponents();
         setLocationRelativeTo(null);    
@@ -121,11 +122,32 @@ public class Registro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistarActionPerformed
-        // TODO add your handling code here:
+        for(int i = 0; i < Jugador.UsuariosTotales;i++){
+            if(txtNombre.getText().equalsIgnoreCase(Jugador.jugadores[i].nombre) || txtUsuario.getText().equalsIgnoreCase(Jugador.jugadores[i].username)){
+                JOptionPane.showMessageDialog(null,"Ya existe el nombre o el usuario registrado");
+                return;
+            }
+        }
+        
+        String password =  new String(txtPassword.getPassword());
+        
+        if(txtNombre.getText().equals(" ") || txtUsuario.getText().equals(" ") || txtPassword.getText().equals(" ")){
+            JOptionPane.showMessageDialog(null,"No puede dejar campos vacio");
+        }else if(password.length() < 5){
+            JOptionPane.showMessageDialog(null, "La contraseña no puede ser menor a 5");
+        }else{
+            Jugador nuevo = new Jugador(txtNombre.getText(), txtUsuario.getText(), password);
+            Jugador.jugadores[Jugador.UsuariosTotales] =  nuevo;
+            Jugador.UsuariosTotales++;
+            JOptionPane.showMessageDialog(null, "Nombre: " + txtNombre.getText()+"\nUsuario: " + txtUsuario.getText()+"\nHa sido creado");
+            
+            menuInicio.setVisible(true);
+            menuInicio.setLocationRelativeTo(null);
+            dispose();
+        }
     }//GEN-LAST:event_btnRegistarActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        MenuInicio menuInicio = new MenuInicio();
         menuInicio.setVisible(true);
         menuInicio.setLocationRelativeTo(null);
         dispose();
