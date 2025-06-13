@@ -124,7 +124,7 @@ public class Registro extends javax.swing.JFrame {
 
     private void btnRegistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistarActionPerformed
         for (int i = 0; i < Jugador.UsuariosTotales; i++) {
-            if (txtNombre.getText().equalsIgnoreCase(Jugador.jugadores[i].nombre) || txtUsuario.getText().equalsIgnoreCase(Jugador.jugadores[i].username)) {
+            if (txtUsuario.getText().equalsIgnoreCase(Jugador.jugadores[i].username) || txtUsuario.getText().equalsIgnoreCase(Jugador.jugadores[i].username)) {
                 JOptionPane.showMessageDialog(null, "Ya existe el nombre o el usuario registrado");
                 return;
             }
