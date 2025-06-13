@@ -123,6 +123,7 @@ public class Tablero extends javax.swing.JFrame {
         casilla6 = new javax.swing.JButton();
         casilla7 = new javax.swing.JButton();
         casilla8 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -135,23 +136,28 @@ public class Tablero extends javax.swing.JFrame {
             }
         });
         jPanel1.add(casilla2);
-        casilla2.setBounds(200, 20, 90, 90);
+        casilla2.setBounds(200, 100, 90, 90);
         jPanel1.add(casilla0);
-        casilla0.setBounds(20, 20, 90, 90);
+        casilla0.setBounds(20, 100, 90, 90);
         jPanel1.add(casilla1);
-        casilla1.setBounds(110, 20, 90, 90);
+        casilla1.setBounds(110, 100, 90, 90);
         jPanel1.add(casilla5);
-        casilla5.setBounds(200, 110, 90, 90);
+        casilla5.setBounds(200, 190, 90, 90);
         jPanel1.add(casilla3);
-        casilla3.setBounds(20, 110, 90, 90);
+        casilla3.setBounds(20, 190, 90, 90);
         jPanel1.add(casilla4);
-        casilla4.setBounds(110, 110, 90, 90);
+        casilla4.setBounds(110, 190, 90, 90);
         jPanel1.add(casilla6);
-        casilla6.setBounds(20, 200, 90, 90);
+        casilla6.setBounds(20, 280, 90, 90);
         jPanel1.add(casilla7);
-        casilla7.setBounds(110, 200, 90, 90);
+        casilla7.setBounds(110, 280, 90, 90);
         jPanel1.add(casilla8);
-        casilla8.setBounds(200, 200, 90, 90);
+        casilla8.setBounds(200, 280, 90, 90);
+
+        jLabel1.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
+        jLabel1.setText("PARTIDA");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(20, 20, 220, 60);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -198,6 +204,7 @@ public class Tablero extends javax.swing.JFrame {
     private javax.swing.JButton casilla6;
     private javax.swing.JButton casilla7;
     private javax.swing.JButton casilla8;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

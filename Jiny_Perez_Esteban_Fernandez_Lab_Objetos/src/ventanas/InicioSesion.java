@@ -130,10 +130,17 @@ public class InicioSesion extends javax.swing.JFrame {
         boolean encontrado = false;
 
         for (int i = 0; i < Jugador.UsuariosTotales; i++) {
-            if (usuario.equals(Jugador.jugadores[i].username)
-                    && password.equals(Jugador.jugadores[i].password)) {
-                encontrado = true;
-                break;
+            if (Jugador.jugadores[i] != null) {
+                System.out.println("Comparando con usuario[" + i + "]: '"
+                        + Jugador.jugadores[i].username + "'");
+
+                if (usuario.equals(Jugador.jugadores[i].username)
+                        && password.equals(Jugador.jugadores[i].password)) {
+                    encontrado = true;
+                    break;
+                }
+            } else {
+                System.out.println("jugadores[" + i + "] es null");
             }
         }
 
@@ -144,6 +151,9 @@ public class InicioSesion extends javax.swing.JFrame {
             dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
+            txtUsername.setText("");
+            txtpassword.setText("");
+            txtUsername.requestFocus();
         }
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
