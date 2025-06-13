@@ -14,9 +14,10 @@ import jiny_perez_esteban_fernandez_lab_objetos.Jugador;
 public class Registro extends javax.swing.JFrame {
 
     MenuInicio menuInicio = new MenuInicio();
+
     public Registro() {
         initComponents();
-        setLocationRelativeTo(null);    
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -122,25 +123,25 @@ public class Registro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistarActionPerformed
-        for(int i = 0; i < Jugador.UsuariosTotales;i++){
-            if(txtNombre.getText().equalsIgnoreCase(Jugador.jugadores[i].nombre) || txtUsuario.getText().equalsIgnoreCase(Jugador.jugadores[i].username)){
-                JOptionPane.showMessageDialog(null,"Ya existe el nombre o el usuario registrado");
+        for (int i = 0; i < Jugador.UsuariosTotales; i++) {
+            if (txtNombre.getText().equalsIgnoreCase(Jugador.jugadores[i].nombre) || txtUsuario.getText().equalsIgnoreCase(Jugador.jugadores[i].username)) {
+                JOptionPane.showMessageDialog(null, "Ya existe el nombre o el usuario registrado");
                 return;
             }
         }
-        
-        String password =  new String(txtPassword.getPassword());
-        
-        if(txtNombre.getText().equals(" ") || txtUsuario.getText().equals(" ") || txtPassword.getText().equals(" ")){
-            JOptionPane.showMessageDialog(null,"No puede dejar campos vacio");
-        }else if(password.length() < 5){
+
+        String password = new String(txtPassword.getPassword());
+
+        if (txtNombre.getText().equals(" ") || txtUsuario.getText().equals(" ") || txtPassword.getText().equals(" ")) {
+            JOptionPane.showMessageDialog(null, "No puede dejar campos vacio");
+        } else if (password.length() < 5) {
             JOptionPane.showMessageDialog(null, "La contraseña no puede ser menor a 5");
-        }else{
+        } else {
             Jugador nuevo = new Jugador(txtNombre.getText(), txtUsuario.getText(), password);
-            Jugador.jugadores[Jugador.UsuariosTotales] =  nuevo;
+            Jugador.jugadores[Jugador.UsuariosTotales] = nuevo;
             Jugador.UsuariosTotales++;
-            JOptionPane.showMessageDialog(null, "Nombre: " + txtNombre.getText()+"\nUsuario: " + txtUsuario.getText()+"\nHa sido creado");
-            
+            JOptionPane.showMessageDialog(null, "Nombre: " + txtNombre.getText() + "\nUsuario: " + txtUsuario.getText() + "\nHa sido creado");
+
             menuInicio.setVisible(true);
             menuInicio.setLocationRelativeTo(null);
             dispose();
